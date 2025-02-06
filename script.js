@@ -1,21 +1,22 @@
 function firstNonRepeatedChar(str) {
  // Write your code here
-	if(!str){
-		return null;
+	let obj = [];
+	let str = 'aabbcdd';
+
+	for(let i=0; i<str.length; i++){
+		if(obj[str[i]]==undefined){
+			obj[str[i]]=1;
+		}
+		else{
+			obj[str[i]]++;
+		}
 	}
-	let map = new Map();
-	 for (let char of str) {
-        charMap.set(char, (charMap.get(char) || 0) + 1);
-    }
 
-    for (let [key, value] of charMap) {
-        if (value === 1) return key;
-    }
-
-    return null;
-}
-console.log(firstNonRepeatedChar("aabbcdd")); 
-console.log(firstNonRepeatedChar("aabbcc")); 
-}
+	for(let x in obj){
+		if(obj[x]==1){
+			console.log(x);
+		}
+	}
+	console.log(obj);
 // const input = prompt("Enter a string");
 // alert(firstNonRepeatedChar(input)); 
