@@ -1,19 +1,23 @@
 function firstNonRepeatedChar(str) {
  // Write your code here
-	function firstNonRepeatedChar(str) {
-    if (!str) return null;
+	 if (!str) return null; // Handle empty string
 
+    let charCount = {}; // Frequency map
+
+    // First loop: Count occurrences of each character
     for (let char of str) {
-        if (str.indexOf(char) === str.lastIndexOf(char)) {
+        charCount[char] = (charCount[char] || 0) + 1;
+    }
+
+    // Second loop: Find the first non-repeated character
+    for (let char of str) {
+        if (charCount[char] === 1) {
             return char;
         }
     }
-    
+
     return null;
 }
-
-console.log(firstNonRepeatedChar("aabbcdd")); // Output: 'c'
-console.log(firstNonRepeatedChar("aabbcc"));  // Output: null
 
 const input = prompt("Enter a string");
 alert(firstNonRepeatedChar(input)); 
