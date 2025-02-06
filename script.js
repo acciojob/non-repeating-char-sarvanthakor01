@@ -16,6 +16,9 @@ function firstNonRepeatedChar(str) {
 		if(obj[x]==1){
 			console.log(x);
 		}
+		else{
+			console.log(null);
+		}
 	}
 	console.log(obj);
 }
